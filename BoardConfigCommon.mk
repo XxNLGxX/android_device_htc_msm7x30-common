@@ -30,14 +30,17 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
 
 # Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION      := VER_0_6_X
-BOARD_WLAN_DEVICE           := bcm4329
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_FW_STA_PATH     := "/vendor/firmware/fw_bcm4329.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/vendor/firmware/fw_bcm4329_apsta.bin"
-WIFI_DRIVER_MODULE_ARG      := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
-WIFI_DRIVER_MODULE_NAME     := "bcm4329"
+BOARD_WPA_SUPPLICANT_DRIVER         := WEXT
+BOARD_WLAN_DEVICE                   := bcm4329
+WPA_SUPPLICANT_VERSION              := VER_0_8_X
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB    := lib_driver_cmd_wext
+BOARD_HOSTAPD_DRIVER                := WEXT
+BOARD_HOSTAPD_PRIVATE_LIB           := lib_driver_cmd_wext
+WIFI_DRIVER_MODULE_PATH             := "/system/lib/modules/bcm4329.ko"
+WIFI_DRIVER_FW_STA_PATH             := "/vendor/firmware/fw_bcm4329.bin"
+WIFI_DRIVER_FW_AP_PATH              := "/vendor/firmware/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_MODULE_ARG              := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_MODULE_NAME             := "bcm4329"
 
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_QCOM_VOIPMUTE := true
@@ -50,6 +53,7 @@ BOARD_VENDOR_QCOM_AMSS_VERSION := 1200
 
 BOARD_EGL_CFG := device/htc/msm7x30-common/egl.cfg
 
+BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
